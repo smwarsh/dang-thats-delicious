@@ -7,7 +7,8 @@ router.get('/', (req, res) => {
   // res.json(steph);
   res.render('hello', {
     name: 'steph',
-    cat: req.query.cat
+    cat: req.query.cat,
+    title: 'I love food'
   });
 });
 

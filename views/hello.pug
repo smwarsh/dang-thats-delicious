@@ -1,7 +1,4 @@
-.wrapper
-  - const upCat = cat.toUpperCase();
-  p.hello Hello my cat's name is #{upCat}
+extends layout
 
-h2
-  | Hello
-  em  How are you?
+block content
+  h2 Sale ends #{h.moment().endOf('day').fromNow()}
