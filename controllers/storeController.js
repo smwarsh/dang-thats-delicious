@@ -3,6 +3,10 @@ const Store = mongoose.model('Store');
 
 exports.homePage = (req, res) => {
   console.log(req.name);
+  req.flash('error', 'Something happened');
+  req.flash('info', 'Something happened');
+  req.flash('warning', 'Something happened');
+  req.flash('success', 'Something happened');
   res.render('index');
 }
 
@@ -13,5 +17,6 @@ exports.addStore = (req, res) => {
 exports.createStore = async (req, res) => {
   const store = new Store(req.body);
   await store.save();
+  req.flash('success', `Successfully created ${store.name}. Care to leave a review?`);
   res.redirect('/');
 }
