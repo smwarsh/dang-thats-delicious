@@ -29,7 +29,7 @@ exports.editStore = async (req, res) => {
   // TO DO
 
   // 3. Render out the edit form so user can update their store
-  res.render('editStore', { title: `Edit ${store.name}`, store })
+  res.render('editStore', { title: `Edit ${store.name}`, store });
 }
 
 exports.updateStore = async (req, res) => {
