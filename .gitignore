@@ -6,3 +6,4 @@ node_modules/readdirp/node_modules/micromatch/lib/.DS_Store
 node_modules/watchpack/node_modules/extglob/lib/.DS_Store
 node_modules/watchpack/node_modules/micromatch/lib/.DS_Store
 variables.env
+.DS_Store
