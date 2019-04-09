@@ -34,6 +34,14 @@ exports.resize = async (req, res, next) => {
   }
   const extension = req.file.mimetype.split('/')[1];
   req.body.photo = `${uuidv4()}.${extension}`;
+  
+  // resize
+  const photo = await jimp.read(req.file.buffer);
+  await photo.resize(800, jimp.AUTO); // width, height
+  await photo.write(`./public/uploads/${req.body.photo}`);
+
+  // once the photo is written to the filesystem, keep going!
+  next();
 }
 
 exports.createStore = async (req, res) => {
