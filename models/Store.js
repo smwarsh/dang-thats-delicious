@@ -37,6 +37,7 @@ const storeSchema = new mongoose.Schema({
 
 storeSchema.pre('save', async function(next) {
   // if the store's name is not modified
+  // this is not working! when the store name changes, the slug does not update
   if(!this.isModified('name')) {
     next(); // skip it
     return; // stop this function from running
